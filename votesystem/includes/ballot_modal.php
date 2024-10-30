@@ -5,13 +5,13 @@
             <div class="modal-header">
               <button type="button"  class=" btn btn-close btn-curve pull-right" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" style="color:black ; font-size: 15px; font-family:Times">Vote Preview</h4>
+              <h4 class="modal-title" style="color:black ; font-size: 15px; font-family:Times">Vista previa para emitir tu voto</h4>
             </div>
             <div class="modal-body">
               <div id="preview_body"></div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-curve pull-left" style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times' data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="button" class="btn btn-default btn-curve pull-left" style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times' data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
               <p id="plat_view"></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
             <div class="modal-header">
               <button type="button" class=" btn btn-close btn-curve pull-right" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"> <b>Your Votes </b></h4>
+              <h4 class="modal-title"> <b>Tus votos</b></h4>
             </div>
             <div class="modal-body">
               <?php
@@ -61,7 +61,7 @@
               ?>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-curve pull-left" style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times' data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="button" class="btn btn-default btn-curve pull-left" style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times' data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             </div>
         </div>
     </div>

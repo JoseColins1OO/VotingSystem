@@ -95,7 +95,7 @@
                                         $image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
                                         $candidate .= '
                                             <li>
-                                                '.$input.'<button type="button" class="btn btn-success btn-sm btn-curve clist" style="background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
+                                                '.$input.'<button type="button" class="btn btn-success btn-sm btn-curve clist" style="background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'"><i class="fa fa-search"></i> Acerca de mi</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
                                             </li>
                                         ';
                                     }
@@ -112,7 +112,7 @@
                                                     <div class="box-body">
                                                         <p>'.$instruct.'
                                                             <span class="pull-right">
-                                                                <button type="button" class="btn btn-danger btn-sm btn-curve reset" style="background-color: #C00000; color: white; font-size: 12px; font-family: Times;" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reset</button>
+                                                                <button type="button" class="btn btn-danger btn-sm btn-curve reset" style="background-color: #C00000; color: white; font-size: 12px; font-family: Times;" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reiniciar</button>
                                                             </span>
                                                         </p>
                                                         <div id="candidate_list">
@@ -130,8 +130,8 @@
                                 }
                                 ?>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-success btn-curve" style='background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;' id="preview"><i class="fa fa-file-text"></i> Preview</button>
-                                    <button type="submit" class="btn btn-primary btn-curve" style='background-color: #4682B4; color: black; font-size: 12px; font-family: Times;' name="vote"><i class="fa fa-check-square-o"></i> Submit</button>
+                                    <button type="button" class="btn btn-success btn-curve" style='background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;' id="preview"><i class="fa fa-file-text"></i> Anteriores</button>
+                                    <button type="submit" class="btn btn-primary btn-curve" style='background-color: #4682B4; color: black; font-size: 12px; font-family: Times;' name="vote"><i class="fa fa-check-square-o"></i> Enviar</button>
                                 </div>
                             </form>
                             <!-- End Voting Ballot -->
