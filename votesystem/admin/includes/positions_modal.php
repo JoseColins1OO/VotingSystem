@@ -25,8 +25,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-curve pull-left"style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times'  data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-primary btn-curve"style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times'  name="add"><i class="fa fa-save"></i> Save</button>
+              <button type="button" class="btn btn-default btn-curve pull-left"style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times'  data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-primary btn-curve"style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times'  name="add"><i class="fa fa-save"></i> Guardar</button>
               </form>
             </div>
         </div>
@@ -46,7 +46,7 @@
               <form class="form-horizontal" method="POST" action="positions_edit.php">
                 <input type="hidden" class="id" name="id">
                 <div class="form-group">
-                    <label for="edit_description" class="col-sm-3 control-label">Descripsion</label>
+                    <label for="edit_description" class="col-sm-3 control-label">Descripcion</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_description" name="description">

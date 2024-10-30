@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Fotografia</label>
+                    <label for="photo" class="col-sm-3 control-label">Foto</label>
 
                     <div class="col-sm-9">
                       <input type="file" id="photo" name="photo">
@@ -97,7 +97,7 @@
               <form class="form-horizontal" method="POST" action="candidates_edit.php">
                 <input type="hidden" class="id" name="id">
                 <div class="form-group">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Nombre(s)</label>
+                    <label for="edit_firstname" class="col-sm-3 control-label">Nombre</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_firstname" name="firstname" required>
@@ -184,7 +184,7 @@
               <form class="form-horizontal" method="POST" action="candidates_photo.php" enctype="multipart/form-data">
                 <input type="hidden" class="id" name="id">
                 <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Fotografia</label>
+                    <label for="photo" class="col-sm-3 control-label">Foto</label>
 
                     <div class="col-sm-9">
                       <input type="file" id="photo" name="photo" required>
