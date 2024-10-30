@@ -10,7 +10,7 @@
 		$query = $conn->query($sql);
 
 		if($query->num_rows < 1){
-			$_SESSION['error'] = 'No se encontró al usuari con el numero de cuenta proporcionado';
+			$_SESSION['error'] = 'No existe el usuario';
 		}
 		else{
 			$row = $query->fetch_assoc();
@@ -18,7 +18,7 @@
 				$_SESSION['voter'] = $row['id'];
 			}
 			else{
-				$_SESSION['error'] = 'Contrasenia invalida';
+				$_SESSION['error'] = 'Usuario o contraseña invalidos';
 			}
 		}
 		

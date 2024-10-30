@@ -2,7 +2,7 @@
   <nav class="navbar navbar-static-top" style="background-color:#717A83 ">
     <div class="container" style="background-color:#717A83 ">
       <div class="navbar-header" style="background-color:#717A83 ">
-        <a href="#" class="navbar-brand" style="background-color:#717A83 ;color:black ; font-size: 22px; font-family:Times  "><b>ONLINE<b> VOTING</b> SYSTEM</a>
+        <a href="#" class="navbar-brand" style="background-color:#717A83 ;color:black ; font-size: 22px; font-family:Times  "><b>SISTEMA<b> DE VOTACION</b>UAEMEX</a>
         <button type="button" class="navbar-toggle collapsed"style="background-color:#717A83 " data-toggle="collapse" data-target="#navbar-collapse">
           <i class="fa fa-bars"></i>
         </button>
@@ -31,7 +31,7 @@
               <span class="hidden-xs"  style="color:black ; font-size: 22px; font-family:Times  "><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
             </a>
           </li>
-          <li><a href="logout.php"> <b style="color:black ; font-size: 22px;> <i class=fa fa-sign-out"> </b></i> <b style="color:black ; font-size: 22px; font-family:Times  " > LOGOUT </b></a></li>  
+          <li><a href="logout.php"> <b style="color:black ; font-size: 22px;> <i class=fa fa-sign-out"> </b></i> <b style="color:black ; font-size: 22px; font-family:Times  " > SALIR </b></a></li>  
         </ul>
       </div>
       <!-- /.navbar-custom-menu -->

@@ -122,7 +122,7 @@ if (isset($_SESSION['voter'])) {
             <p class="login-box-msg">Inicie sesión como administrador</p>
             <form action="login.php" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="voter" placeholder="Voter's ID / No de cuenta" required>
+                    <input type="text" class="form-control" name="voter" placeholder="No de cuenta" required>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="password" placeholder="Contraseña" required>

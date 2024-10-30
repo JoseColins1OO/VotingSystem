@@ -130,8 +130,8 @@
                                 }
                                 ?>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-success btn-curve" style='background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;' id="preview"><i class="fa fa-file-text"></i> Preview</button>
-                                    <button type="submit" class="btn btn-primary btn-curve" style='background-color: #4682B4; color: black; font-size: 12px; font-family: Times;' name="vote"><i class="fa fa-check-square-o"></i> Submit</button>
+                                    <button type="button" class="btn btn-success btn-curve" style='background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;' id="preview"><i class="fa fa-file-text"></i> Ver </button>
+                                    <button type="submit" class="btn btn-primary btn-curve" style='background-color: #4682B4; color: black; font-size: 12px; font-family: Times;' name="vote"><i class="fa fa-check-square-o"></i> Enviar</button>
                                 </div>
                             </form>
                             <!-- End Voting Ballot -->
