@@ -54,8 +54,8 @@
                   <th class="hidden"></th>
                   <th>Posicion</th>
                   <th>Foto</th>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
+                  <th>Nombre(s)</th>
+                  <th>Apellido(s)</th>
                   <th>Plataforma</th>
                   <th>Herramientas</th>
                 </thead>

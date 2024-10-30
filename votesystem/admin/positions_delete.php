@@ -5,7 +5,7 @@
 		$id = $_POST['id'];
 		$sql = "DELETE FROM positions WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Posición eliminada exitosamente';
+			$_SESSION['success'] = 'Posición eliminada';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

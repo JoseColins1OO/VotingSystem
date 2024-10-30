@@ -20,7 +20,7 @@
 
 		$sql = "UPDATE voters SET firstname = '$firstname', lastname = '$lastname', password = '$password' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Votante actualizado exitosamente';
+			$_SESSION['success'] = 'Votante actualizado';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

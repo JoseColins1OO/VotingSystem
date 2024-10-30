@@ -34,7 +34,7 @@
 
 			$sql = "UPDATE admin SET username = '$username', password = '$password', firstname = '$firstname', lastname = '$lastname', photo = '$filename' WHERE id = '".$user['id']."'";
 			if($conn->query($sql)){
-				$_SESSION['success'] = 'Perfil de administrador actualizado exitosamente';
+				$_SESSION['success'] = 'Perfil de administrador actualizado';
 			}
 			else{
 				$_SESSION['error'] = $conn->error;

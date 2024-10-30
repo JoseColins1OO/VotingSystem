@@ -15,7 +15,7 @@
 
 		$sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$voter', '$password', '$firstname', '$lastname', '$filename')";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Votante agregado exitosamente';
+			$_SESSION['success'] = 'Votante agregado';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

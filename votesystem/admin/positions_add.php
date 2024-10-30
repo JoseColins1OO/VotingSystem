@@ -13,7 +13,7 @@
 		
 		$sql = "INSERT INTO positions (description, max_vote, priority) VALUES ('$description', '$max_vote', '$priority')";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Posición agregada exitosamente';
+			$_SESSION['success'] = 'Posición agregada';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

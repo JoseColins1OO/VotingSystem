@@ -13,7 +13,7 @@
 
 		$sql = "INSERT INTO candidates (position_id, firstname, lastname, photo, platform) VALUES ('$position', '$firstname', '$lastname', '$filename', '$platform')";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Candidato agregado exitosamente';
+			$_SESSION['success'] = 'Candidato agregado';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
