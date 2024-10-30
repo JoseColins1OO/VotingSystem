@@ -2,6 +2,7 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['add'])){
+		$no_cuenta = $_POST['no_cuenta'];
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -13,7 +14,7 @@
 		$set = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$voter = substr(str_shuffle($set), 0, 15);
 
-		$sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$voter', '$password', '$firstname', '$lastname', '$filename')";
+		$sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$no_cuenta', '$password', '$firstname', '$lastname', '$filename')";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Votante agregado';
 		}

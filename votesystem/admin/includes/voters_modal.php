@@ -9,7 +9,14 @@
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="voters_add.php" enctype="multipart/form-data">
-                <div class="form-group">
+              <div class="form-group">
+                    <label for="firstname" class="col-sm-3 control-label">No. Cuenta</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="no_cuenta" name="no_cuenta" required>
+                    </div>
+                </div>
+              <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">Nombre</label>
 
                     <div class="col-sm-9">
