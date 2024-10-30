@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><b>
-        Ballot Position
+      Posición en la Boleta
       </b></h1>
       <ol class="breadcrumb" style="color:black ; font-size: 17px; font-family:Times">
         <li><a href="#"><i class="fa fa-dashboard" ></i> Inicio</a></li>
@@ -35,7 +35,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> OK!</h4>
               ".$_SESSION['success']."
             </div>
           ";
