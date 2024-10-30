@@ -11,10 +11,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header" style= "color:black ; font-size: 17px; font-family:Times">
       <h1>
-        VOTES
+        VOTOS
       </h1>
       <ol class="breadcrumb" style="color:black ; font-size: 17px; font-family:Times">
-        <li><a href="#"><i class="fa fa-dashboard" ></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard" ></i> Inicio</a></li>
         <li class="active" style="color:black ; font-size: 17px; font-family:Times" >Dashboard</li>
       </ol>
     </section>
@@ -46,15 +46,15 @@
         <div class="col-xs-12">
           <div class="box"style="background-color: #d8d1bd">
             <div class="box-header with-border"style="background-color: #d8d1bd">
-              <a href="#reset" data-toggle="modal" class="btn btn-danger btn-sm btn-curve"  style="background-color: #ff8e88;color:black ; font-size: 12px; font-family:Times"><i class="fa fa-refresh"></i> Reset</a>
+              <a href="#reset" data-toggle="modal" class="btn btn-danger btn-sm btn-curve"  style="background-color: #ff8e88;color:black ; font-size: 12px; font-family:Times"><i class="fa fa-refresh"></i> Reiniciar</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table ">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Position</th>
-                  <th>Candidate</th>
-                  <th>Voter</th>
+                  <th>Posicion</th>
+                  <th>Candidato</th>
+                  <th>Votante</th>
                 </thead>
                 <tbody>
                   <?php

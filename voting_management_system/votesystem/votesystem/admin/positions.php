@@ -14,7 +14,7 @@
         Positions
       </b></h1>
       <ol class="breadcrumb" style="color:black ; font-size: 17px; font-family:Times">
-        <li><a href="#"><i class="fa fa-dashboard" ></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard" ></i> Inicio</a></li>
         <li class="active" style="color:black ; font-size: 17px; font-family:Times" >Dashboard</li>
       </ol>
     </section>
@@ -52,9 +52,9 @@
               <table id="example1" class="table ">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Description</th>
-                  <th>Maximum Vote</th>
-                  <th>Tools</th>
+                  <th>Descripcion</th>
+                  <th>Voto Maximo</th>
+                  <th>Herramientas</th>
                 </thead>
                 <tbody>
                   <?php
@@ -68,10 +68,8 @@
                           <td>".$row['max_vote']."</td>
                           <td>
                           
-                            
-
-                            <button class='btn btn-success btn-sm edit btn-curve' style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times' ' data-id='".$row['id']."' ><i class='fa fa-edit'></i> Edit</button>
-                            <button class='btn btn-danger btn-sm delete btn-curve' style='background-color:#ff8e88 ;color:black ; font-size: 12px; font-family:Times ' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
+                            <button class='btn btn-success btn-sm edit btn-curve' style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times' ' data-id='".$row['id']."' ><i class='fa fa-edit'></i> Editar </button>
+                            <button class='btn btn-danger btn-sm delete btn-curve' style='background-color:#ff8e88 ;color:black ; font-size: 12px; font-family:Times ' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
                           </td>
                         </tr>
                       ";

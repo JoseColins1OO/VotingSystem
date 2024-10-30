@@ -34,7 +34,7 @@
 
 			$sql = "UPDATE admin SET username = '$username', password = '$password', firstname = '$firstname', lastname = '$lastname', photo = '$filename' WHERE id = '".$user['id']."'";
 			if($conn->query($sql)){
-				$_SESSION['success'] = 'Admin profile updated successfully';
+				$_SESSION['success'] = 'Perfil de administrador actualizado exitosamente';
 			}
 			else{
 				$_SESSION['error'] = $conn->error;
@@ -42,11 +42,11 @@
 			
 		}
 		else{
-			$_SESSION['error'] = 'Incorrect password';
+			$_SESSION['error'] = 'Contraseña incorrecta';
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Fill up required details first';
+		$_SESSION['error'] = 'Complete primero los detalles requeridos';
 	}
 
 	header('location:'.$return);

@@ -14,7 +14,7 @@
 
 		if($priority == 0){
 			$output['error'] = true;
-			$output['message'] = 'This position is already at the top';
+			$output['message'] = 'Esta posición ya está en la cima.';
 		}
 		else{
 			$sql = "UPDATE positions SET priority = priority + 1 WHERE priority = '$priority'";

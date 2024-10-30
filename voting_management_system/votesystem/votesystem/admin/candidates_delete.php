@@ -5,14 +5,14 @@
 		$id = $_POST['id'];
 		$sql = "DELETE FROM candidates WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Candidate deleted successfully';
+			$_SESSION['success'] = 'Candidato eliminado exitosamente';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Select item to delete first';
+		$_SESSION['error'] = 'Seleccione el elemento para eliminar primero';
 	}
 
 	header('location: candidates.php');

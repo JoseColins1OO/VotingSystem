@@ -15,7 +15,7 @@
 			if($row['max_vote'] > 1){
 				if(count($_POST[$position]) > $row['max_vote']){
 					$output['error'] = true;
-					$output['message'][] = '<li>You can only choose '.$row['max_vote'].' candidates for '.$row['description'].'</li>';
+					$output['message'][] = '<li>Solo puedes elegir'.$row['max_vote'].' candidatos para '.$row['description'].'</li>';
 				}
 				else{
 					foreach($_POST[$position] as $key => $values){

@@ -76,7 +76,7 @@
             <div class="modal-header">
               <button type="button"class=" btn btn-close btn-curve pull-right"  data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Eliminar...</b></h4>
+              <h4 class="modal-title"><b>Proceso de eliminacion </b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="positions_delete.php">

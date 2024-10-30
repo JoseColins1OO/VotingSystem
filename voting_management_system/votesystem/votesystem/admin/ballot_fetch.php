@@ -44,7 +44,7 @@
 						<div class="box-body">
 							<p>'.$instruct.'
 								<span class="pull-right">
-									<button type="button" class="btn btn-success btn-sm btn-curve reset" style="background-color:#9CD095 ;color:black ; font-size: 12px; font-family:Times"  data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reset</button>
+									<button type="button" class="btn btn-success btn-sm btn-curve reset" style="background-color:#9CD095 ;color:black ; font-size: 12px; font-family:Times"  data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reiniciar</button>
 								</span>
 							</p>
 							<div id="candidate_list">

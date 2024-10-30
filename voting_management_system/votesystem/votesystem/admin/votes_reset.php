@@ -3,10 +3,10 @@
 
 	$sql = "DELETE FROM votes";
 	if($conn->query($sql)){
-		$_SESSION['success'] = "Votes reset successfully";
+		$_SESSION['success'] = "Los votos se restablecieron exitosamente";
 	}
 	else{
-		$_SESSION['error'] = "Something went wrong in reseting";
+		$_SESSION['error'] = "Algo salió mal al restablecer";
 	}
 
 	header('location: votes.php');

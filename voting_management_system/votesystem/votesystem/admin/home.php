@@ -15,7 +15,7 @@
       📜 Dashboard 📜
       </b></h1>
       <ol class="breadcrumb" style="color:black ; font-size: 17px; font-family:Times">
-        <li><a href="#"><i class="fa fa-dashboard" ></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard" ></i> Inicio</a></li>
         <li class="active" style="color:black ; font-size: 17px; font-family:Times" >Dashboard</li>
       </ol>
     </section>
@@ -37,7 +37,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> OK!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -57,13 +57,13 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p > <b >No. of Positions </b> </p>
+              <p > <b >No. de Posiciones </b> </p>
             </div>
             <div class="icon">
               <i class="fa fa-cog"></i>
             </div>
             
-            <a href="positions.php" class="small-box-footer " style="background-color:#4682B4 ; color:black ; font-size:18px">More info <i class="fa fa-arrow-right"></i></a>
+            <a href="positions.php" class="small-box-footer " style="background-color:#4682B4 ; color:black ; font-size:18px">Más información <i class="fa fa-arrow-right"></i></a>
           </div>
           
         </div>
@@ -79,14 +79,14 @@
                 echo "<h3  >".$query->num_rows."</h3>";
               ?>
           
-              <p> <b >No. of Candidates </b></p>
+              <p> <b >No. de Candidatos </b></p>
             </div>
             <div class="icon">
               
              <i class="fa fa-black-tie"></i>
              
             </div>
-            <a href="candidates.php" class="small-box-footer" style="background-color:	#8B4513 ;color:black ; font-size: 18px">More info <i class="fa fa-arrow-right"></i></a>
+            <a href="candidates.php" class="small-box-footer" style="background-color:	#8B4513 ;color:black ; font-size: 18px">Más información <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -101,12 +101,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
              
-              <p> <b >Total Voters </b></p>
+              <p> <b >Total de Votantes </b></p>
             </div>
             <div class="icon">
               <i class="fa fa-users"></i>
             </div>
-            <a href="voters.php" class="small-box-footer "style="background-color:  #96837E ;color:black ; font-size: 18px">More info <i class="fa fa-arrow-right"></i></a>
+            <a href="voters.php" class="small-box-footer "style="background-color:  #96837E ;color:black ; font-size: 18px">Más información <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -121,12 +121,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p> <b>Voters Voted </b></p>
+              <p> <b>Votantes que Votaron </b></p>
             </div>
             <div class="icon">
               <i class="fa fa-edit"></i>
             </div>
-            <a href="votes.php" class="small-box-footer "style="background-color: #2F4F4F ;color:black ; font-size: 18px">More info <i class="fa fa-arrow-right"></i></a>
+            <a href="votes.php" class="small-box-footer "style="background-color: #2F4F4F ;color:black ; font-size: 18px">Más información <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -134,10 +134,10 @@
 
       <div class="row" style="color:black ; font-size: 17px; font-family:Times">
         <div class="col-xs-12" >
-          <h3> <b>VOTES TALLY
+          <h3> <b>CONTEO DE VOTOS
             <span class="pull-right">
             
-              <a href="print.php" class="btn btn-success btn-sm btn-curve" style="background-color: #2E8B57 ;color:black ; font-size: 12px; font-family:Times "><span class="glyphicon glyphicon-print"></span> Print</a>
+              <a href="print.php" class="btn btn-success btn-sm btn-curve" style="background-color: #2E8B57 ;color:black ; font-size: 12px; font-family:Times "><span class="glyphicon glyphicon-print"></span> Imprimir</a>
             </span>
          </b> </h3>
         </div>

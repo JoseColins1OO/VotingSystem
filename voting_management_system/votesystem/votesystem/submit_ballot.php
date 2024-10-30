@@ -4,7 +4,7 @@
 
 	if(isset($_POST['vote'])){
 		if(count($_POST) == 1){
-			$_SESSION['error'][] = 'Please vote atleast one candidate';
+			$_SESSION['error'][] = 'Por favor vote al menos un candidato';
 		}
 		else{
 			$_SESSION['post'] = $_POST;
@@ -19,7 +19,7 @@
 					if($row['max_vote'] > 1){
 						if(count($_POST[$position]) > $row['max_vote']){
 							$error = true;
-							$_SESSION['error'][] = 'You can only choose '.$row['max_vote'].' candidates for '.$row['description'];
+							$_SESSION['error'][] = 'Solo puedes elegir '.$row['max_vote'].' candidatos para'.$row['description'];
 						}
 						else{
 							foreach($_POST[$position] as $key => $values){
@@ -44,7 +44,7 @@
 				}
 
 				unset($_SESSION['post']);
-				$_SESSION['success'] = 'Ballot Submitted';
+				$_SESSION['success'] = 'Boleta enviada';
 
 			}
 
@@ -52,7 +52,7 @@
 
 	}
 	else{
-		$_SESSION['error'][] = 'Select candidates to vote first';
+		$_SESSION['error'][] = 'Seleccionar candidatos para votar primero';
 	}
 
 	header('location: home.php');

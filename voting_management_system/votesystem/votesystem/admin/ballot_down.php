@@ -17,7 +17,7 @@
 
 		if($priority > $pquery->num_rows){
 			$output['error'] = true;
-			$output['message'] = 'This position is already at the bottom';
+			$output['message'] = 'Esta posición ya está en la parte inferior.';
 		}
 		else{
 			$sql = "UPDATE positions SET priority = priority - 1 WHERE priority = '$priority'";
