@@ -10,7 +10,7 @@
 
 		$sql = "UPDATE candidates SET firstname = '$firstname', lastname = '$lastname', position_id = '$position', platform = '$platform' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Candidato actualizado con éxito';
+			$_SESSION['success'] = 'Candidato actualizado';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

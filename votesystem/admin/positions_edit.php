@@ -8,7 +8,7 @@
 
 		$sql = "UPDATE positions SET description = '$description', max_vote = '$max_vote' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Posición actualizada exitosamente';
+			$_SESSION['success'] = 'Posición actualizada';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;

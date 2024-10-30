@@ -15,7 +15,7 @@
                 ?>
                 <form class="form-horizontal" method="POST" action="config_save.php?return=<?php echo basename($_SERVER['PHP_SELF']); ?>">
                   <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label">Title</label>
+                    <label for="title" class="col-sm-3 control-label">Titulo</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="title" name="title" value="<?php echo $title; ?>">
@@ -24,8 +24,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-curve pull-left"style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times' data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-curve"style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times' tyle='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times'  name="save"><i class="fa fa-save"></i> Save</button>
+              <button type="button" class="btn btn-default btn-curve pull-left"style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times' data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-success btn-curve"style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times' tyle='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times'  name="save"><i class="fa fa-save"></i> Guardar</button>
               </form>
             </div>
         </div>

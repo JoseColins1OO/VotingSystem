@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><b>
-        Positions
+        Puesto
       </b></h1>
       <ol class="breadcrumb" style="color:black ; font-size: 17px; font-family:Times">
         <li><a href="#"><i class="fa fa-dashboard" ></i> Inicio</a></li>
@@ -35,7 +35,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> OK!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -46,7 +46,7 @@
         <div class="col-xs-12"  >
           <div class="box"style="background-color: #d8d1bd" >
             <div class="box-header with-border" style="background-color: #d8d1bd">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-curve  " style="background-color: #4682B4 ;color:black ; font-size: 12px; font-family:Times" ><i class="fa fa-plus "></i> New</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-curve  " style="background-color: #4682B4 ;color:black ; font-size: 12px; font-family:Times" ><i class="fa fa-plus "></i> Agregar</a>
             </div>
             <div class="box-body" >
               <table id="example1" class="table ">
