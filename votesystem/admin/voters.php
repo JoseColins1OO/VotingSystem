@@ -47,6 +47,13 @@
           <div class="box" style="background-color: #d8d1bd">
             <div class="box-header with-border" style="background-color: #d8d1bd">
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-curve " style="background-color: #4682B4 ;color:black ; font-size: 12px; font-family:Times"><i class="fa fa-plus"></i> Agregar</a>
+              
+
+
+              <!-- Import CSV -->
+              <button onclick="window.location.href='UploadData.php'">
+            <i class="fa fa-upload"></i> Subir Archivos CSV
+        </button>
             </div>
             <div class="box-body">
               <table id="example1" class="table ">

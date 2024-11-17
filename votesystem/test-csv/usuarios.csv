@@ -1,0 +1,6 @@
+id,voters_id,password,firstname,lastname,photo
+1,2021011,password123,John,Doe,john_doe.jpg
+2,2021011,securepass,Jane,Smith,jane_smith.jpg
+3,2021011,mypassword,Alice,Johnson,alice_johnson.jpg
+4,2021011,letmein,Bob,Brown,bob_brown.jpg
+5,2021011,qwerty123,Charlie,Davis,charlie_davis.jpg

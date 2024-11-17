@@ -71,7 +71,7 @@ h1, h3 {
         <li class="active">Dashboard</li>
       </ol>
     </section>
-
+    
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
