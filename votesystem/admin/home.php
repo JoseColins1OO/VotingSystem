@@ -159,9 +159,7 @@ h1, h3 {
       <div class="row">
         <div class="col-xs-12">
           <h3 class="text-center"><b>CONTEO DE VOTOS
-            <span class="pull-right">
-              <a href="print.php" class="btn btn-success btn-sm" style="background-color: #4CAF50; color:white;"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
-            </span>
+           
           </b></h3>
         </div>
       </div>
