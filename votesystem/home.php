@@ -8,19 +8,28 @@
     <div class="content-wrapper" style="background-color: #F1E9D2">
         <div class="container" style="background-color: #F1E9D2">
 
+        <div class="text-center">
+    <!-- Botón con color verde -->
+    <a href="candidatos.php" class="btn btn-success btn-lg" style="margin-top: 20px;">Ver Candidatos</a>
+</div>
+
             <!-- Main content -->
             <section class="content">
                 <?php
                     $parse = parse_ini_file('admin/config.ini', FALSE, INI_SCANNER_RAW);
                     $title = $parse['election_title'];
                 ?>
-                <h1 class="page-header text-center title"><b><?php echo strtoupper($title); ?></b></h1>
+                <!-- Centrado del título -->
+                <h1 class="page-header text-center title" style="font-size: 2.5em; color: #3C763D; font-family: 'Arial', sans-serif; font-weight: bold;">
+                    <b><?php echo strtoupper($title); ?></b>
+                </h1>
+
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
                         <?php
                         if(isset($_SESSION['error'])){
                             ?>
-                            <div class="alert alert-danger alert-dismissible">
+                            <div class="alert alert-danger alert-dismissible" style="text-align: center; background-color: #F8D7DA; color: #721C24; font-size: 1.2em;">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <ul>
                                     <?php
@@ -34,18 +43,19 @@
                             unset($_SESSION['error']);
                         }
                         if(isset($_SESSION['success'])){
-                            echo "
-                                <div class='alert alert-success alert-dismissible'>
-                                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                                    <h4><i class='icon fa fa-check'></i> OK!</h4>
-                                    ".$_SESSION['success']."
-                                </div>
-                            ";
+                            ?>
+                            <div class="alert alert-success alert-dismissible" style="text-align: center; font-size: 1.5em; font-weight: bold; background-color: #DFF0D8; color: #3C763D;">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <i class="icon fa fa-check"></i>
+                                <?php echo $_SESSION['success']; ?>
+                            </div>
+                            <?php
                             unset($_SESSION['success']);
                         }
                         ?>
 
-                        <div class="alert alert-danger alert-dismissible" id="alert" style="display:none;">
+                        <!-- Alerta personalizada de error -->
+                        <div class="alert alert-danger alert-dismissible" id="alert" style="display:none; text-align: center; font-size: 1.2em; font-weight: bold; background-color: #F2DEDE; color: #A94442;">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <span class="message"></span>
                         </div>
@@ -95,7 +105,12 @@
                                         $image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
                                         $candidate .= '
                                             <li>
-                                                '.$input.'<button type="button" class="btn btn-success btn-sm btn-curve clist" style="background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'"><i class="fa fa-search"></i> Acerca de mi</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
+                                                '.$input.'<br>
+                                                <button type="button" class="btn btn-info btn-sm btn-flat clist about" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'">
+                                                    <i class="fa fa-search"></i> Acerca de mí
+                                                </button>
+                                                <img src="'.$image.'" height="100px" width="100px" class="clist">
+                                                <span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
                                             </li>
                                         ';
                                     }
@@ -105,14 +120,14 @@
                                     echo '
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="box box-solid" style="background-color: #E2E3D5;" id="'.$row['id'].'">
-                                                    <div class="box-header with-border" style="background-color: #E2E3D5;">
-                                                        <h3 class="box-title"><b>'.$row['description'].'</b></h3>
+                                                <div class="box box-solid" id="'.$row['id'].'">
+                                                    <div class="box-header with-border">
+                                                        <h3 class="box-title text-center" style="font-size: 1.8em; color: #3C763D; font-weight: bold;"><b>'.$row['description'].'</b></h3>
                                                     </div>
                                                     <div class="box-body">
-                                                        <p>'.$instruct.'
+                                                        <p>'.$instruct.'<br>
                                                             <span class="pull-right">
-                                                                <button type="button" class="btn btn-danger btn-sm btn-curve reset" style="background-color: #C00000; color: white; font-size: 12px; font-family: Times;" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reiniciar</button>
+                                                                <button type="button" class="btn btn-success btn-sm btn-flat reset" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reset</button>
                                                             </span>
                                                         </p>
                                                         <div id="candidate_list">
@@ -127,14 +142,14 @@
                                     ';
 
                                     $candidate = '';
-                                }
+                                }    
                                 ?>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-success btn-curve" style='background-color: #6A7F22; color: white; font-size: 12px; font-family: Times;' id="preview"><i class="fa fa-file-text"></i> Ver </button>
-                                    <button type="submit" class="btn btn-primary btn-curve" style='background-color: #4682B4; color: black; font-size: 12px; font-family: Times;' name="vote"><i class="fa fa-check-square-o"></i> Enviar</button>
+                                    <button type="button" class="btn btn-primary btn-flat" id="preview"><i class="fa fa-file-text"></i> Preview</button>
+                                    <button type="submit" class="btn btn-success btn-flat" name="vote"><i class="fa fa-check-square-o"></i> Submit</button>
                                 </div>
                             </form>
-                            <!-- End Voting Ballot -->
+                           
                             <?php
                         }
                         ?>
@@ -142,7 +157,6 @@
                     </div>
                 </div>
             </section>
-
         </div>
     </div>
 
@@ -164,7 +178,7 @@ $(function(){
         $('.'+desc).iCheck('uncheck');
     });
 
-    $(document).on('click', '.platform', function(e){
+    $(document).on('click', '.about', function(e){
         e.preventDefault();
         $('#platform').modal('show');
         var platform = $(this).data('platform');
@@ -187,24 +201,18 @@ $(function(){
                 data: form,
                 dataType: 'json',
                 success: function(response){
-                    if(response.error){
-                        var errmsg = '';
-                        var messages = response.message;
-                        for (i in messages) {
-                            errmsg += messages[i];
-                        }
-                        $('.message').html(errmsg);
+                    if(response.status == 'success'){
+                        $('#view').html(response.content);
+                        $('#view').modal('show');
+                    }
+                    else{
+                        $('.message').html(response.message);
                         $('#alert').show();
-                    } else {
-                        $('#preview_modal').modal('show');
-                        $('#preview_body').html(response.list);
                     }
                 }
             });
         }
-
     });
-
 });
 </script>
 </body>
