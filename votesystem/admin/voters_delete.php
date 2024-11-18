@@ -13,7 +13,7 @@
 	}
 	else{
 		$_SESSION['error'] = 'Seleccione primero el elemento a eliminar';
-
+	}
 	header('location: voters.php');
 	
 ?>

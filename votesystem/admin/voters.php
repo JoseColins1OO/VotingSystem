@@ -58,10 +58,9 @@
             <div class="box-body">
               <table id="example1" class="table ">
                 <thead>
-                  <th>Apellido(s)</th>
+                  <th>No Cuenta</th>
                   <th>Nombre(s)</th>
-                  <th>Foto</th>
-                  <th>ID Votos</th>
+                  <th>Apellido(s)</th>
                   <th>Herramientas</th>
                 </thead>
                 <tbody>
@@ -72,13 +71,9 @@
                       $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
                       echo "
                         <tr style='color:black ; font-size: 15px; font-family:Times'>
+                        <td>".$row['voters_id']."</td>
+                        <td>".$row['firstname']."</td>
                           <td>".$row['lastname']."</td>
-                          <td>".$row['firstname']."</td>
-                          <td>
-                            <img src='".$image."' width='30px' height='30px'>
-                            <a href='#edit_photo' data-toggle='modal' class='pull-right photo' data-id='".$row['id']."'><span class='fa fa-edit'></span></a>
-                          </td>
-                          <td>".$row['voters_id']."</td>
                           <td>
                            
                             <button class='btn btn-success btn-sm edit btn-curve' style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times' ' data-id='".$row['id']."' ><i class='fa fa-edit'></i> Editar</button>
