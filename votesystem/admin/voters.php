@@ -47,13 +47,14 @@
           <div class="box" style="background-color: #d8d1bd">
             <div class="box-header with-border" style="background-color: #d8d1bd">
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-curve " style="background-color: #4682B4 ;color:black ; font-size: 12px; font-family:Times"><i class="fa fa-plus"></i> Agregar</a>
-              
+            
 
-
-              <!-- Import CSV -->
-              <button onclick="window.location.href='UploadData.php'">
+            <!-- Import CSV -->
+            <button onclick="window.location.href='temporal.php'">
             <i class="fa fa-upload"></i> Subir Archivos CSV
         </button>
+
+        
             </div>
             <div class="box-body">
               <table id="example1" class="table ">
@@ -61,6 +62,7 @@
                   <th>No Cuenta</th>
                   <th>Nombre(s)</th>
                   <th>Apellido(s)</th>
+                  <th>Correo Institucional</th>
                   <th>Herramientas</th>
                 </thead>
                 <tbody>
@@ -68,14 +70,14 @@
                     $sql = "SELECT * FROM voters";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
-                      $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
+                      
                       echo "
                         <tr style='color:black ; font-size: 15px; font-family:Times'>
                         <td>".$row['voters_id']."</td>
                         <td>".$row['firstname']."</td>
                           <td>".$row['lastname']."</td>
+                          <td>".$row['email']."</td>
                           <td>
-                           
                             <button class='btn btn-success btn-sm edit btn-curve' style='background-color: #9CD095 ;color:black ; font-size: 12px; font-family:Times' ' data-id='".$row['id']."' ><i class='fa fa-edit'></i> Editar</button>
                             <button class='btn btn-danger btn-sm delete btn-curve' style='background-color:#ff8e88 ;color:black ; font-size: 12px; font-family:Times ' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
 

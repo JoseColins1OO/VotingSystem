@@ -2,21 +2,15 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['add'])){
-		$no_cuenta = $_POST['no_cuenta'];
+		$voters_id = $_POST['no_cuenta'];
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-		$filename = $_FILES['photo']['name'];
-		if(!empty($filename)){
-			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
-		}
-		//generate voters id
-		$set = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		$voter = substr(str_shuffle($set), 0, 15);
+		$email = $_POST['correo'];
 
-		$sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$no_cuenta', '$password', '$firstname', '$lastname', '$filename')";
+		$sql = "INSERT INTO voters (voters_id, password, firstname, lastname, email) VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$email')";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Votante agregado';
+			$_SESSION['success'] = 'Usuario agregado';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
@@ -24,7 +18,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Complete primero el formulario';
+		$_SESSION['error'] = 'Debe completar el formulario';
 	}
 
 	header('location: voters.php');

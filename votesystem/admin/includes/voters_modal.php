@@ -5,7 +5,7 @@
             <div class="modal-header">
               <button type="button" class=" btn btn-close btn-curve pull-right" " data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Voter</b></h4>
+              <h4 class="modal-title"><b>Agregar Nuevo Usuario</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="voters_add.php" enctype="multipart/form-data">
@@ -16,6 +16,16 @@
                       <input type="text" class="form-control" id="no_cuenta" name="no_cuenta" required>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-3 control-label">Correo Institucional</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="correo" name="correo" required>
+                    </div>
+                </div>
+
+
               <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">Nombre</label>
 
@@ -37,17 +47,10 @@
                       <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Foto</label>
-
-                    <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo">
-                    </div>
-                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-curve pull-left"style='background-color:  #FFDEAD  ;color:black ; font-size: 12px; font-family:Times' data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
-              <button type="submit" class="btn btn-primary btn-curve" style='background-color:  #9CD095  ;color:black ; font-size: 12px; font-family:Times' name="add"><i class="fa fa-save"></i> Guardas</button>
+              <button type="submit" class="btn btn-primary btn-curve" style='background-color:  #9CD095  ;color:black ; font-size: 12px; font-family:Times' name="add"><i class="fa fa-save"></i> Guardar</button>
               </form>
             </div>
         </div>

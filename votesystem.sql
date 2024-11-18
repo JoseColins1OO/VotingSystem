@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
+-- Exportación de MySQL realizada por phpMyAdmin
+-- versión 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 02:28 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- Hora de generación: 27 de mayo de 2021, 02:28 PM
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,27 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `votesystem`
+-- Base de datos: `votesystem`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Estructura de la tabla `admin`
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `photo` varchar(150) NOT NULL,
-  `created_on` date NOT NULL
+  `id` int(11) NOT NULL, -- Identificador único del administrador
+  `username` varchar(50) NOT NULL, -- Nombre de usuario
+  `password` varchar(60) NOT NULL, -- Contraseña encriptada
+  `firstname` varchar(50) NOT NULL, -- Nombre
+  `lastname` varchar(50) NOT NULL, -- Apellido
+  `photo` varchar(150) NOT NULL, -- Ruta de la foto
+  `created_on` date NOT NULL -- Fecha de creación del administrador
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Datos de la tabla `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `photo`, `created_on`) VALUES
@@ -47,122 +47,123 @@ INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `pho
 -- --------------------------------------------------------
 
 --
--- Table structure for table `candidates`
+-- Estructura de la tabla `candidates`
 --
 
 CREATE TABLE `candidates` (
-  `id` int(11) NOT NULL,
-  `position_id` int(11) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `photo` varchar(150) NOT NULL,
-  `platform` text NOT NULL
+  `id` int(11) NOT NULL, -- Identificador único del candidato
+  `position_id` int(11) NOT NULL, -- ID de la posición que representa
+  `firstname` varchar(30) NOT NULL, -- Nombre
+  `lastname` varchar(30) NOT NULL, -- Apellido
+  `photo` varchar(150) NOT NULL, -- Ruta de la foto
+  `platform` text NOT NULL -- Descripción de su plataforma política
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `positions`
+-- Estructura de la tabla `positions`
 --
 
 CREATE TABLE `positions` (
-  `id` int(11) NOT NULL,
-  `description` varchar(50) NOT NULL,
-  `max_vote` int(11) NOT NULL,
-  `priority` int(11) NOT NULL
+  `id` int(11) NOT NULL, -- Identificador único de la posición
+  `description` varchar(50) NOT NULL, -- Descripción del cargo
+  `max_vote` int(11) NOT NULL, -- Número máximo de votos permitidos
+  `priority` int(11) NOT NULL -- Prioridad de la posición
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `voters`
+-- Estructura de la tabla `voters`
 --
 
 CREATE TABLE `voters` (
-  `id` int(11) NOT NULL,
-  `voters_id` varchar(15) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL
+  `id` int(11) NOT NULL, -- Identificador único del votante
+  `voters_id` varchar(15) NOT NULL, -- ID del votante
+  `password` varchar(60) NOT NULL, -- Contraseña encriptada
+  `firstname` varchar(30) NOT NULL, -- Nombre
+  `lastname` varchar(30) NOT NULL, -- Apellido
+  `email` varchar(100) NOT NULL -- Correo electrónico del votante
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `votes`
+-- Estructura de la tabla `votes`
 --
 
 CREATE TABLE `votes` (
-  `id` int(11) NOT NULL,
-  `voters_id` int(11) NOT NULL,
-  `candidate_id` int(11) NOT NULL,
-  `position_id` int(11) NOT NULL
+  `id` int(11) NOT NULL, -- Identificador único del voto
+  `voters_id` int(11) NOT NULL, -- ID del votante
+  `candidate_id` int(11) NOT NULL, -- ID del candidato
+  `position_id` int(11) NOT NULL -- ID de la posición
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexes for dumped tables
+-- Índices de las tablas
 --
 
 --
--- Indexes for table `admin`
+-- Índices para la tabla `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `candidates`
+-- Índices para la tabla `candidates`
 --
 ALTER TABLE `candidates`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `positions`
+-- Índices para la tabla `positions`
 --
 ALTER TABLE `positions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `voters`
+-- Índices para la tabla `voters`
 --
 ALTER TABLE `voters`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `votes`
+-- Índices para la tabla `votes`
 --
 ALTER TABLE `votes`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Configuración de AUTO_INCREMENT en las tablas
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT para la tabla `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `candidates`
+-- AUTO_INCREMENT para la tabla `candidates`
 --
 ALTER TABLE `candidates`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `positions`
+-- AUTO_INCREMENT para la tabla `positions`
 --
 ALTER TABLE `positions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `voters`
+-- AUTO_INCREMENT para la tabla `voters`
 --
 ALTER TABLE `voters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `votes`
+-- AUTO_INCREMENT para la tabla `votes`
 --
 ALTER TABLE `votes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
