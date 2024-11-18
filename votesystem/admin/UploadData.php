@@ -1,79 +1,73 @@
-<?php include 'includes/session.php'; ?>
-<?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<?php
 
-  <?php include 'includes/navbar.php'; ?>
-  <?php include 'includes/menubar.php'; ?>
+// Include the database configuration file
+include 'includes/session.php';
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color:#F1E9D2 ">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-   
-      <ol class="breadcrumb" style="color:black ; font-size: 17px; font-family:Times">
-        <li><a href="#"><i class="fa fa-dashboard" ></i> Inicio</a></li>
-        <li class="active" style="color:black ; font-size: 17px; font-family:Times" >Importar Usuarios</li>
-      </ol>
-      <h1 class="text-center"><b>📁 Subir Archivo CSV 📁</b></h1>
-    </section>
-    <!-- Main content -->
-    <section class="content">
-      <?php
-        if(isset($_SESSION['error'])){
-          echo "
-            <div class='alert alert-danger alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-warning'></i> Error!</h4>
-              ".$_SESSION['error']."
-            </div>
-          ";
-          unset($_SESSION['error']);
-        }
-        if(isset($_SESSION['success'])){
-          echo "
-            <div class='alert alert-success alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> OK!</h4>
-              ".$_SESSION['success']."
-            </div>
-          ";
-          unset($_SESSION['success']);
-        }
-      ?>
-    <!-- Import CSV --> 
-    <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="box box-solid bg-custom">
-                    <div class="box-header with-border">
-                        <h4 class="box-title"><b>Subir Archivo CSV</b></h4>
-                    </div>
-                    <div class="box-body">
-                        <form action="process_upload.php" method="POST" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="csvFile">Selecciona un archivo CSV:</label>
-                                <input type="file" class="form-control" name="csvFile" id="csvFile" accept=".csv" required>
-                            </div>
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn btn-success">
-                                    <i class="fa fa-upload"></i> Subir Archivo
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+// Handle status messages
+if (!empty($_GET['status'])) {
+    switch ($_GET['status']) {
+        case 'succ':
+            $statusType = 'alert-success';
+            $statusMsg = 'Members data imported successfully.';
+            break;
+        case 'err':
+            $statusType = 'alert-danger';
+            $statusMsg = 'An error occurred. Please try again.';
+            break;
+        case 'invalid_file':
+            $statusType = 'alert-danger';
+            $statusMsg = 'Please upload a valid CSV file.';
+            break;
+        default:
+            $statusType = '';
+            $statusMsg = '';
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import CSV using PHP and MySQL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<?php if (!empty($statusMsg)) { ?>
+    <div class="col-xs-12">
+        <div class="alert <?= $statusType ?>"><?= $statusMsg ?></div>
+    </div>
+<?php } ?>
+
+<div class="row">
+    <div class="col-md-12 head">
+        <div class="float-right">
+            <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i> Import</a>
         </div>
-     
-    </section> 
-    
-        
-  </div>
-    
-  <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/voters_modal.php'; ?>
+    </div>
+
+    <!-- Import Form -->
+    <div class="col-md-12" id="importFrm" style="display: none;">
+        <form action="process_upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+        </form>
+    </div>
 </div>
-<?php include 'includes/scripts.php'; ?>
+
+<script>
+function formToggle(ID){
+    var element = document.getElementById(ID);
+    if(element.style.display === "none"){
+        element.style.display = "block";
+    }else{
+        element.style.display = "none";
+    }
+}
+</script>
 
 </body>
 </html>

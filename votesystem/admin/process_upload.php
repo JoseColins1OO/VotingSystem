@@ -1,58 +1,55 @@
 <?php
 include 'includes/session.php';
+include 'includes/conn.php'; // Asegúrate de que la ruta sea correcta
 
-// Configurar error_log para redirigir errores a stderr
-ini_set('log_errors', 'On');
-ini_set('error_log', 'php://stderr');
+if (isset($_POST['importSubmit'])) {
 
-if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-    // Validar que el archivo sea CSV
-    $file_type = mime_content_type($_FILES['file']['tmp_name']);
-    $allowed_types = ['text/csv', 'application/vnd.ms-excel'];
-    if (!in_array($file_type, $allowed_types)) {
-        $error_message = 'Solo se permiten archivos CSV.';
-        error_log($error_message); // Redirigir error a stderr
-        $_SESSION['error'] = $error_message;
-        header('Location: UploadData.php');
-        exit();
-    }
+    $csvMimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain');
 
-    // Leer el archivo CSV
-    $file = fopen($_FILES['file']['tmp_name'], 'r');
+    if (!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $csvMimes)) {
 
-    // Saltar la primera línea si contiene encabezados
-    $headers = fgetcsv($file);
+        if (is_uploaded_file($_FILES['file']['tmp_name'])) {
 
-    // Procesar las líneas del CSV
-    while (($row = fgetcsv($file)) !== false) {
-        // Asumiendo que el archivo tiene columnas en este orden: no_cuenta, firstname, lastname, password
-        $no_cuenta = $row[0];
-        $firstname = $row[1];
-        $lastname = $row[2];
-        $password = password_hash($row[3], PASSWORD_DEFAULT); // Encriptar la contraseña
+            $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
 
-        // Generar voters_id único
-        $set = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $voters_id = substr(str_shuffle($set), 0, 15);
+            fgetcsv($csvFile); // omitir encabezado
 
-        // Insertar en la base de datos
-        $sql = "INSERT INTO voters (voters_id, password, firstname, lastname) VALUES ('$no_cuenta', '$password', '$firstname', '$lastname')";
-        if (!$conn->query($sql)) {
-            // Manejo de errores si no se puede insertar una fila
-            $error_message = "Error al insertar fila: " . $conn->error;
-            error_log($error_message); // Redirigir error a stderr
+            while (($line = fgetcsv($csvFile)) !== false) {
+
+                // Asignar valores de cada columna del CSV
+                $voters_id  = $line[1];  // Primer columna: voters_id
+                $password   = $line[2];  // Segunda columna: password
+                $firstname  = $line[3];  // Tercera columna: firstname
+                $lastname   = $line[4];  // Cuarta columna: lastname
+                $photo      = $line[5];  // Quinta columna: photo
+
+                // Comprobar si el 'voters_id' ya existe en la base de datos
+                $prevQuery = "SELECT id FROM voters WHERE voters_id = '".$line[0]."'";
+                $prevResult = $conn->query($prevQuery);
+
+                // Si el 'voters_id' ya existe, se actualizan los datos
+                if ($prevResult->num_rows > 0) {
+                    $conn->query("UPDATE voters SET password = '".$password."', firstname = '".$firstname."', lastname = '".$lastname."', photo = '".$photo."' WHERE voters_id = '".$voters_id."'");
+                } else {
+                    // Si el 'voters_id' no existe, se insertan los nuevos datos
+                    $conn->query("INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('".$voters_id."', '".$password."', '".$firstname."', '".$lastname."', '".$photo."')");
+                }
+
+            }
+
+            fclose($csvFile);
+
+            $qstring = '?status=succ';
+
+        } else {
+            $qstring = '?status=err';
         }
+
+    } else {
+        $qstring = '?status=invalid_file';
     }
 
-    // Cerrar el archivo
-    fclose($file);
-
-    $_SESSION['success'] = 'Los datos del archivo CSV fueron cargados correctamente.';
-} else {
-    $error_message = 'No se seleccionó ningún archivo o hubo un error al cargarlo.';
-    error_log($error_message); // Redirigir error a stderr
-    $_SESSION['error'] = $error_message;
 }
 
-header('Location: UploadData.php');
+header('Location: voters.php');
 ?>
