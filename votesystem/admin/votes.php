@@ -47,6 +47,11 @@
           <div class="box"style="background-color: #d8d1bd">
             <div class="box-header with-border"style="background-color: #d8d1bd">
               <a href="#reset" data-toggle="modal" class="btn btn-danger btn-sm btn-curve"  style="background-color: #ff8e88;color:black ; font-size: 12px; font-family:Times"><i class="fa fa-refresh"></i> Reiniciar</a>
+              <a href="generate_report.php" class="btn btn-primary btn-sm btn-curve" style="background-color: #88aaff; color:white ; font-size: 12px; font-family:Times">
+    <i class="fa fa-file-pdf-o"></i> Generar Reporte
+  </a>
+
+
             </div>
             <div class="box-body">
               <table id="example1" class="table ">

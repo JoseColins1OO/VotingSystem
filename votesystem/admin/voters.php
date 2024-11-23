@@ -51,7 +51,7 @@
 
             <!-- Import CSV -->
             <button onclick="window.location.href='temporal.php'">
-            <i class="fa fa-upload"></i> Subir Archivos CSV
+            <i class="fa fa-upload"></i> Importar CSV
         </button>
 
         
